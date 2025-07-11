@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Menu, X, BookOpen, Award, Users, Briefcase, User } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -42,11 +43,15 @@ const Navigation = () => {
 
           {/* Desktop Actions */}
           <div className="hidden md:flex items-center space-x-4">
-            <Button variant="ghost">
-              <User className="h-4 w-4 mr-2" />
-              Sign In
-            </Button>
-            <Button variant="hero">Get Started</Button>
+            <Link to="/auth">
+              <Button variant="ghost">
+                <User className="h-4 w-4 mr-2" />
+                Sign In
+              </Button>
+            </Link>
+            <Link to="/auth">
+              <Button variant="hero">Get Started</Button>
+            </Link>
           </div>
 
           {/* Mobile menu button */}
@@ -77,13 +82,17 @@ const Navigation = () => {
                 </a>
               ))}
               <div className="pt-4 space-y-2">
-                <Button variant="ghost" className="w-full justify-start">
-                  <User className="h-4 w-4 mr-2" />
-                  Sign In
-                </Button>
-                <Button variant="hero" className="w-full">
-                  Get Started
-                </Button>
+                <Link to="/auth" className="block">
+                  <Button variant="ghost" className="w-full justify-start">
+                    <User className="h-4 w-4 mr-2" />
+                    Sign In
+                  </Button>
+                </Link>
+                <Link to="/auth" className="block">
+                  <Button variant="hero" className="w-full">
+                    Get Started
+                  </Button>
+                </Link>
               </div>
             </div>
           </div>

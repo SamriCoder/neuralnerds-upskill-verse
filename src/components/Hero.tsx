@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Users, BookOpen, Award, Target } from "lucide-react";
+import { Link } from "react-router-dom";
 import heroImage from "@/assets/skillbridge-hero.jpg";
 
 const Hero = () => {
@@ -30,10 +31,12 @@ const Hero = () => {
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
-            <Button variant="hero" size="lg" className="text-lg px-8 py-4">
-              Start Your Journey
-              <ArrowRight className="ml-2 h-5 w-5" />
-            </Button>
+            <Link to="/auth">
+              <Button variant="hero" size="lg" className="text-lg px-8 py-4">
+                Start Your Journey
+                <ArrowRight className="ml-2 h-5 w-5" />
+              </Button>
+            </Link>
             <Button variant="outline" size="lg" className="text-lg px-8 py-4 bg-white/10 border-white/30 text-white hover:bg-white hover:text-primary">
               Explore Courses
             </Button>
